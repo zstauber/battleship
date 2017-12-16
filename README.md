@@ -1,0 +1,4 @@
+# battleship
+A multi-player, Node.js server based version of the old paper and pencil game Battleship
+
+For you Node.js folks, this is a version of the old paper and pencil game (or Milton Bradley game, if you are more familiar with that one).  When you start the server it waits for two players to connect.  They both have to agree to start a game.  If a third player starts, another game is spawned off by the server and the third player waits for a partner.  If there are multiple games in play, and people disconnect, the server tries to pair up remaining players, rather than making them wait for new connections again.  It uses no real graphics, SVG orCcanvas.  It uses HTML5/CSS3 based graphics.  It is pretty mobile friendly.  I am also uploading some configuration files to help you set it up so that it starts upon boot in Ubuntu 17.xx, which is what I run.
