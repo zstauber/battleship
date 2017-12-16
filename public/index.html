@@ -1,0 +1,105 @@
+<!--
+ ! Copyright (c) 2017 Zachary L. Stauber
+ !
+ ! Permission is hereby granted, free of charge, to any person obtaining a
+ ! copy of this software and associated documentation files (the "Software"),
+ ! to deal in the Software without restriction, including without limitation
+ ! the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ ! and/or sell copies of the Software, and to permit persons to whom the
+ ! Software is furnished to do so, subject to the following conditions:
+ !
+ ! The above copyright notice and this permission notice shall be included
+ ! in all copies or substantial portions of the Software.
+ !
+ ! THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ ! OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ ! FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ ! AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ ! LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ ! FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ ! DEALINGS IN THE SOFTWARE.
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Battleship</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="css/main.css" />
+		<script>
+			(function(w, d, undefined) {
+				var script = d.createElement('script');
+				script.setAttribute('data-main', 'js/main');
+				//script.src = 'http://requirejs.org/docs/release/2.3.3/minified/require.js';
+				script.src = 'js/lib/require.js';
+				script.async = true;
+				d.getElementsByTagName('head')[0].appendChild(script);
+			} (window, window.document));
+		</script>
+	</head>
+	<body>
+		<!--tabindex is purely there to make the div selectable.  Without it-->
+		<!--a div cannot capture a keydown event, only the entire document.-->
+		<div id="divGame" tabindex="1" class="game">
+			<!-- We will have a start screen that will show until a second player
+			connects, and then disappears, revealing a the game screen.  There will
+			be two divs, side by side, with one table each, representing the grids,
+			and below it a status bar with one line, showing hits, misses, or the win
+			or lose messages. -->
+			<div id="divTitle" class="game">
+				<b>BATTLESHIP</b>
+			</div>
+			<div id="divControls">
+				<fieldset id="fieldsetShipOrientation" disabled="disabled">
+					<legend id="legendShipOrientation">orientation</legend>
+					<form id="formOrient">
+						<input id="radioOrientVertical" type="radio" name="shipOrientation" value="vertical" checked="checked" disabled="disabled">
+						<label for="radioOrientVertical">vertical</label><br>
+						<input id="radioOrientHorizontal" type="radio" name="shipOrientation" value="horizontal" disabled="disabled">
+						<label for="radioOrientHorizontal">horizontal</label><br>
+					</form>
+				</fieldset>
+				<fieldset id="fieldsetShipType" disabled="disabled">
+					<legend id="legendShipType">type</legend>
+					<form id="formShip">
+						<input id="radioPlaceCarrier" type="radio" name="shipType" value="carrier" class="placeOne" checked="checked" disabled="disabled">
+						<label for="radioPlaceCarrier">carrier</label><br>
+						<input id="radioPlaceBattleship" type="radio" name="shipType" value="battleship" class="placeOne" disabled="disabled">
+						<label for="radioPlaceBattleship">battleship</label><br>
+						<input id="radioPlaceCruiser" type="radio" name="shipType" value="cruiser" class="placeOne" disabled="disabled">
+						<label for="radioPlaceCruiser">cruiser</label><br>
+						<input id="radioPlaceSubmarine" type="radio" name="shipType" value="submarine" class="placeOne" disabled="disabled">
+						<label for="radioPlaceSubmarine">submarine</label><br>
+						<input id="radioPlaceDestroyer" type="radio" name="shipType" value="destroyer" class="placeOne" disabled="disabled">
+						<label for="radioPlaceDestroyer">destroyer</label><br>
+					</form>
+				</fieldset>
+				<button id="buttonPlaceAll" class="placeAll" disabled="disabled">Place All Ships</button>
+				<button id="buttonPlaceDone" class="placeDone" disabled="disabled">Done Placing</button>
+				<button id="buttonRestartGame" type="button" disabled="disabled">Restart Game</button>
+			</div>
+			<div id="divPlay" class="game">
+				<div id="divTarget" class="game">
+					<table id="tableTarget" class="game">
+						<thead id="tHeadTarget" class="game">
+						</thead>
+						<tbody id="tBodyTarget" class="game">
+						</tbody>
+					</table>
+				</div>
+				<div id="divOcean" class="game">
+					<table id="tableOcean" class="game">
+						<thead id="tHeadOcean" class="game">
+						</thead>
+						<tbody id="tBodyOcean" class="game">
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div id="divStatus" class="game">
+				<b>STATUS</b>
+			</div>
+		</div>
+	</body>
+</html>

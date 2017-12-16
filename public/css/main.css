@@ -1,0 +1,178 @@
+/******************************************************************************
+ * Copyright (c) 2017 Zachary L. Stauber
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a
+ * copy of this software and associated documentation files (the "Software"),
+ * to deal in the Software without restriction, including without limitation
+ * the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ * and/or sell copies of the Software, and to permit persons to whom the
+ * Software is furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included
+ * in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+ * OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ * DEALINGS IN THE SOFTWARE.
+ ******************************************************************************/
+
+/* Creating divGame with position absolute will make all its child elements that
+ * also have position absolute relative to its final size, which is set after
+ * connecting to the server the first time
+ */
+#divGame {
+	border-radius: 10px;
+	background-color: #333;
+	height: 544px;
+	position: absolute;
+	width: 344px;
+}
+
+#divTitle {
+	border-radius: 10px;
+	background-color: #ddd;
+	height: 20px;
+	margin-left: 8px;
+	margin-top: 8px;
+	text-align: center;
+	width: 328px;
+}
+
+#divControls {
+	background-color: #fff;
+	border-radius: 10px;
+	float: left;
+	height: 454px;
+	/* top right bottom left */
+	margin: 8px 4px 8px 8px;
+	text-align: center;
+	width: 88px;
+}
+
+fieldset {
+	border-radius: 10px;
+	font-family: sans-serif;
+	font-size: 8.5pt;
+	padding: 2px;
+	text-align: left;
+}
+
+input[type="radio"]{
+	vertical-align: baseline;
+}
+
+#divPlay {
+	background-color: #fff;
+	border-radius: 10px;
+	float: right;
+	height: 454px;
+	/* top right bottom left */
+	margin: 8px 8px 8px 4px;
+	padding: 0;
+	width: 228px;
+}
+
+#divTarget {
+	height: 220px;
+	margin: 4px;
+	width: 210px;
+}
+
+#divOcean {
+	height: 220px;
+	margin: 4px;
+	width: 210px;
+}
+
+button {
+	border-radius: 10px;
+	background-color: #ddd;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+#buttonNewGame, #buttonPlaceAll {
+	position: relative;
+	width: 70px;
+}
+
+#divStatus {
+	border-radius: 10px;
+	background-color: #ddd;
+	clear: both;
+	height: 40px;
+	margin: 8px;
+	text-align: center;
+	width: 328px;
+}
+
+table {
+	background-color: #00008b;
+	border: none;
+	border-collapse: collapse;
+	color: #fff;
+	font-size: 13px;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+tr {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+td, th {
+	border: 1px solid #55d4ff;
+	height: 19px;
+	margin: 0;
+	padding: 0;
+	width: 20px;
+}
+
+#tableTarget td:hover {
+	background-color: #ff0;
+}
+
+#tableOcean td:hover {
+	background-color: #0ff;
+}
+
+.blank {
+	border: none;
+	background-color: #fff;
+}
+
+.ship-bow-h {
+	background-image: url("../img/ship_bow_h.png");
+}
+
+.ship-bow-v {
+	background-image: url("../img/ship_bow_v.png");
+}
+
+.ship-mid-h {
+	background-image: url("../img/ship_mid_h.png");
+}
+
+.ship-mid-v {
+	background-image: url("../img/ship_mid_v.png");
+}
+
+.ship-stern-h {
+	background-image: url("../img/ship_stern_h.png");
+}
+
+.ship-stern-v {
+	background-image: url("../img/ship_stern_v.png");
+}
+
+.fade {
+	opacity: 0.0;
+	transition: opacity 3s;
+}
